@@ -4,7 +4,7 @@ import FormikLogin from '../Componentes/Formik'
 function LoginScreen() {
     return (
         <div>
-            <FormikLogin/>
+            <FormikLogin />
         </div>
     )
 }
