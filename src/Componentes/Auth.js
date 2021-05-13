@@ -4,8 +4,11 @@ class Auth {
     }
   
     login(cb) {
-      this.authenticated = true;
+      if(localStorage.getItem('loged')===true){
+        this.authenticated = true;
       cb();
+      console.log(this.isAuthenticated)
+      }
     }
   
     logout(cb) {

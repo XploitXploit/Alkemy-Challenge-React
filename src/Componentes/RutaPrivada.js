@@ -10,9 +10,9 @@ export const RutaPrivada = ({
     <Route
       {...rest}
       render={props => {
-        if (Auth.isAuthenticated()) {
+        if (localStorage.getItem('loged')) {
           return <Component {...props} />;
-        } else {
+        } else {console.log(Auth.isAuthenticated)
           return (
             <Redirect
               to={{
