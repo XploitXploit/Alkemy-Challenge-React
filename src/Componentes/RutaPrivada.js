@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import Auth from "./Auth";
+
 
 export const RutaPrivada = ({
   component: Component,
@@ -10,9 +10,9 @@ export const RutaPrivada = ({
     <Route
       {...rest}
       render={props => {
-        if (localStorage.getItem('loged')) {
+        if (localStorage.getItem('userInfo')) {
           return <Component {...props} />;
-        } else {console.log(Auth.isAuthenticated)
+        } else {
           return (
             <Redirect
               to={{

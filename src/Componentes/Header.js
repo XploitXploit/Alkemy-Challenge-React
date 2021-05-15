@@ -1,5 +1,6 @@
 import React from 'react'
-import {Navbar, Nav, Container, Row} from 'react-bootstrap'
+import {Navbar, Nav} from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 
 function Header() {
     return (
@@ -9,10 +10,27 @@ function Header() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/"> <i className="fas fa-home px-1"></i>Home</Nav.Link>
-                        <Nav.Link href="/login"><i class="fas fa-mask px-1"></i>Login</Nav.Link>
-                        <Nav.Link href="/buscar"><i class="fas fa-search px-1"></i>Buscar</Nav.Link>
-                        <Nav.Link href="/equipo"> <i class="fas fa-users px-1"></i>Equipo</Nav.Link>
+                        <LinkContainer to='/'>
+                            <Nav.Link > <i className="fas fa-home px-1"></i>Home</Nav.Link>
+                        </LinkContainer>
+
+                        {localStorage.getItem('userInfo')?(
+                        <div></div>):(
+                            <LinkContainer to='/login'>
+                                <Nav.Link ><i className="fas fa-mask px-1"></i>Login</Nav.Link>
+                            </LinkContainer>)}    
+                        
+                            
+                        <LinkContainer to="/buscar">
+                        <Nav.Link ><i className="fas fa-search px-1"></i>Buscar</Nav.Link>
+                        </LinkContainer>
+
+                        <LinkContainer to='/equipo'>
+                        <Nav.Link> <i className="fas fa-users px-1"></i>Equipo</Nav.Link>
+                        </LinkContainer>
+                        
+                        
+                        
                     </Nav>
                     
                 </Navbar.Collapse>

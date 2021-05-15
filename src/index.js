@@ -1,40 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import store from './store'
+
 import './index.css';
 import './bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import axios from 'axios'
 
-// For GET requests
-axios.interceptors.request.use(
-  (req) => {
-     // Add configurations here
-     return req;
-  },
-  (err) => {
-     return Promise.reject(err);
-  }
-);
 
-// For POST requests
-axios.interceptors.response.use(
-  (res) => {
-     // Add configurations here
-     if (res.status === 401) {
-        console.log('Invalid Credentials');
-     }
-     return res;
-  },
-  (err) => {
-     return Promise.reject(err);
-  }
-);
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider >,
   document.getElementById('root')
 );
 
