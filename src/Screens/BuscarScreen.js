@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react'
+
 import { useFormik } from 'formik';
-import { Form, Button, Container,Col,Row,Alert, CardGroup } from 'react-bootstrap'
+import { Form, Button, Container,Col,Row,Alert } from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux'
 import HeroeCards from '../Componentes/HerosCards';
 import { listBusqueda } from '../Acciones/heroeAcciones'
@@ -27,7 +27,6 @@ function BuscarScreen() {
     
     
     
-  
 
     const formik = useFormik({
         initialValues: {  
@@ -62,25 +61,23 @@ function BuscarScreen() {
                 <Col>
                     <Button className="my-3" variant="primary" type="submit">Buscar</Button>
                 </Col>
+                {formik.errors.heroe ? <Alert variant='info'>{formik.errors.heroe}</Alert> : null}
             </Row>
 
             <Row>
-                <Row>
-                    
-                    {heroes ? heroes.map(h=> <HeroeCards key={h['id']} heroes={h}/>):<div></div> }
-                    
-                    
-                </Row>
-
-                        
+                    {loading ? <Loader/>: error ? <MensajeAlerta variant='danger'>{error}</MensajeAlerta>: heroes?
+                    heroes.map(h=> <HeroeCards key={h.id} heroes={h}/>):<div></div> }
             </Row>
 
                 
             </Form>
-            {formik.errors.heroe ? <Alert variant='info'>{formik.errors.heroe}</Alert> : null}
+            
         </Container>
         
     )
 }
 
 export default BuscarScreen
+
+
+

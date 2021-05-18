@@ -4,22 +4,28 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { userLoginReducer} from './Reducers/userReducer';
 import { heroeBusquedaReducer } from './Reducers/heroesReducer'
+import { heroeEquipoReducer} from './Reducers/heroesReducer'
+import {heroeBusquedaIdReducer} from './Reducers/heroesReducer'
 
 
 const reducer = combineReducers({ 
     userLogin: userLoginReducer,
     heroeBusqueda: heroeBusquedaReducer,
-    
+    heroeEquipo: heroeEquipoReducer,
+    heroeId: heroeBusquedaIdReducer,
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ?
                                 JSON.parse(localStorage.getItem('userInfo')) : null
 const busquedaInfoFromStorage = localStorage.getItem('heroeBusqueda') ?
-                                JSON.parse(localStorage.getItem('userInfo')) : null
+                                JSON.parse(localStorage.getItem('heroeBusqueda')) : null
+const heroeEquipoFromStorage = localStorage.getItem('equipoHeroes') ?
+                                JSON.parse(localStorage.getItem('equipoHeroes')) : null
 
 const initialState = {
     userLogin: {userInfo: userInfoFromStorage},
-    heroeBusqueda:  {heroeBusqueda:busquedaInfoFromStorage}
+    heroeBusqueda:  {heroeBusqueda: busquedaInfoFromStorage},
+    Equipo: {equipoHeroe: heroeEquipoFromStorage}
 }
 
 const middleware = [thunk]

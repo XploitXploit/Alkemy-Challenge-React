@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Navbar, Nav} from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 
 function Header() {
+   const user = useSelector(state => state.userLogin)
+   const {userInfo} = user
+
+    
     return (
         <header>
             <Navbar bg="primary" variant="dark" expand="lg">
@@ -14,7 +19,7 @@ function Header() {
                             <Nav.Link > <i className="fas fa-home px-1"></i>Home</Nav.Link>
                         </LinkContainer>
 
-                        {localStorage.getItem('userInfo')?(
+                        {userInfo?(
                         <div></div>):(
                             <LinkContainer to='/login'>
                                 <Nav.Link ><i className="fas fa-mask px-1"></i>Login</Nav.Link>
@@ -25,12 +30,6 @@ function Header() {
                         <Nav.Link ><i className="fas fa-search px-1"></i>Buscar</Nav.Link>
                         </LinkContainer>
 
-                        <LinkContainer to='/equipo'>
-                        <Nav.Link> <i className="fas fa-users px-1"></i>Equipo</Nav.Link>
-                        </LinkContainer>
-                        
-                        
-                        
                     </Nav>
                     
                 </Navbar.Collapse>
