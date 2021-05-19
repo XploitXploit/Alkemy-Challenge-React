@@ -1,10 +1,8 @@
-import React,{useEffect} from 'react'
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector} from 'react-redux'
 import { Container,Row } from 'react-bootstrap'
 import DetalleHeroeCard from '../Componentes/DetalleHeroeCard'
 import Loader from '../Componentes/Loader'
-import { detalleHeroe} from '../Acciones/heroeAcciones'
-import { useLocation } from 'react-router'
+
 
 
 

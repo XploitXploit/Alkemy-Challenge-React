@@ -7,17 +7,12 @@ import MensajeAlerta from '../Componentes/MensajeAlerta'
 import {Link} from 'react-router-dom'
 
 
-function HeroeCards({heroes}) {
+function HeroeCardsHome({heroes}) {
     const dispatch = useDispatch()
     const location = useLocation()
     const history = useHistory()
 
-    const scrollToTop = () =>{
-        window.scrollTo({
-            top: 0,
-            behavior:'smooth'
-        })
-    }
+    
 
     const agregarClick = () =>{
 
@@ -53,7 +48,7 @@ function HeroeCards({heroes}) {
                     : <div></div>
                 }
                 
-                    <Card.Title>{heroes.name}{heroeExiste?<i className="fas fa-check px-2"></i>:<div></div>}</Card.Title>
+                    <Card.Title>{heroes.name}</Card.Title>
                     
                 
                 
@@ -84,7 +79,7 @@ function HeroeCards({heroes}) {
                         </div>
                     )
                 }
-                <Link onClick={scrollToTop}>Volver</Link>
+                
                 
                 
             </Card.Body>
@@ -94,4 +89,4 @@ function HeroeCards({heroes}) {
     )
 }
 
-export default HeroeCards
+export default HeroeCardsHome

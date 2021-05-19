@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import {Navbar, Nav} from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'

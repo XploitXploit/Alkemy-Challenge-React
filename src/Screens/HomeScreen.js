@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container,Row} from 'react-bootstrap'
 import {useSelector} from 'react-redux'
-import HeroeCards from '../Componentes/HerosCards'
+import HeroeCardsHome from '../Componentes/HerosCardsHome'
 import MensajeAlerta from '../Componentes/MensajeAlerta'
 import StatsEquipoCard from '../Componentes/StatsEquipoCard'
 import CalcularSumatoriaStats from '../Funciones/calculoStats'
@@ -16,7 +16,7 @@ function HomeScreen() {
         <Row >
             <Row xs={8}>
             <h1>Equipo</h1>
-                {equipoHeroes.length>0 ? equipoHeroes.map(h=> <HeroeCards key={h.id} heroes={h}/>)
+                {equipoHeroes.length>0 ? equipoHeroes.map(h=> <HeroeCardsHome key={h.id} heroes={h}/>)
                 :<MensajeAlerta variant='info'>Por el momento no tiene ningun Héroe en el equipo</MensajeAlerta>}
             </Row>
 
