@@ -10,12 +10,12 @@ function Header() {
     return (
         <header>
             <Navbar bg="primary" variant="dark" expand="lg">
-                <Navbar.Brand href="/" className="px-4">SuperHeros</Navbar.Brand>
+                <Navbar.Brand href="" className="px-4">SuperHéroes</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                         <LinkContainer to='/'>
-                            <Nav.Link > <i className="fas fa-home px-1"></i>Home</Nav.Link>
+                            <Nav.Link > <i className="fas fa-home px-1"></i>Inicio</Nav.Link>
                         </LinkContainer>
 
                         {userInfo?(

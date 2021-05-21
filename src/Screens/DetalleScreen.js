@@ -14,7 +14,7 @@ function DetalleScreen() {
     return (
         <Container>
             <Row>
-            { loading ? <Loader>Loading</Loader> :  <DetalleHeroeCard heroe={heroe}/>} 
+            { loading ? <Loader/> :  <DetalleHeroeCard heroe={heroe}/>} 
             </Row>
         </Container>
     )

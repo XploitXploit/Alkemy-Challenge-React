@@ -41,7 +41,7 @@ function BuscarScreen() {
 
     return (
         <Container>
-            <h1>Busqueda de Heroes</h1>
+            <h1>Búsqueda de Heroes</h1>
             <Form onSubmit={formik.handleSubmit}>
             <Row>
                 <Col>
@@ -51,7 +51,7 @@ function BuscarScreen() {
                             name="heroe"
                             className='my-3' 
                             type="text" 
-                            placeholder="Ingrese el nombre del heroe a buscar"
+                            placeholder="Ingrese el nombre del Héroe a Buscar"
                             onChange={formik.handleChange('heroe')} 
                             value={formik.values.heroe} />    
                     </Form.Group>

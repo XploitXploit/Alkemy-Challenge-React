@@ -41,7 +41,7 @@ function StatsEquipoCard({equipo, promedios}) {
             <Card>
                 <Row>
                     <Col>
-                        <Card.Title className='px-3'> Tipo de Equipo: {Object.keys(equipo)[Object.values(equipo).indexOf(max)].toUpperCase()} {tipoDeEquipoSimbolo()}</Card.Title>
+                        <Card.Title className='px-3 py-2'> Tipo de Equipo: {Object.keys(equipo)[Object.values(equipo).indexOf(max)].toUpperCase()} {tipoDeEquipoSimbolo()}</Card.Title>
                         <ListGroup>
                             {Object.entries(atributosOrdenados).map((x,index) => {
                                 

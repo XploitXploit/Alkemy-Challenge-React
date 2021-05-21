@@ -60,12 +60,12 @@ function HeroeCards({heroes}) {
                 {location.pathname === '/'               
                 ?(
                 <ListGroup variant="flush" >
-                    <ListGroup.Item variant='primary'>Intelligence: {heroes.powerstats.intelligence}</ListGroup.Item>
-                    <ListGroup.Item>Strength: {heroes.powerstats.strength}</ListGroup.Item>
-                    <ListGroup.Item variant='primary'>Speed: {heroes.powerstats.speed}</ListGroup.Item>
-                    <ListGroup.Item>Durability: {heroes.powerstats.durability}</ListGroup.Item>
-                    <ListGroup.Item variant='primary'>Power: {heroes.powerstats.power}</ListGroup.Item>
-                    <ListGroup.Item>Combat: {heroes.powerstats.combat}</ListGroup.Item>
+                    <ListGroup.Item variant='primary'>Inteligenncia: {heroes.powerstats.intelligence}</ListGroup.Item>
+                    <ListGroup.Item>Fuerza: {heroes.powerstats.strength}</ListGroup.Item>
+                    <ListGroup.Item variant='primary'>Velocidad: {heroes.powerstats.speed}</ListGroup.Item>
+                    <ListGroup.Item>Durabilidad: {heroes.powerstats.durability}</ListGroup.Item>
+                    <ListGroup.Item variant='primary'>Poder: {heroes.powerstats.power}</ListGroup.Item>
+                    <ListGroup.Item>Combate: {heroes.powerstats.combat}</ListGroup.Item>
                 </ListGroup>):<div></div>}
                 {
                     location.pathname === '/'

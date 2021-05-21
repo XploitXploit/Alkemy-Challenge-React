@@ -6,6 +6,7 @@ import { useHistory} from 'react-router-dom'
 import ContenedorFormulario from './ContenedorFormulario'
 import { useFormik } from 'formik';
 import { login } from '../Acciones/accionUser'
+import Loader from '../Componentes/Loader'
 
 
 const validate = values => {
@@ -56,13 +57,13 @@ function FormikLogin() {
     return (
         
         <ContenedorFormulario>
-          {loading ? <h1>its loading</h1>:
+          {loading ? <Loader/>:
           <Container>
           <h1>Login</h1>
-          {error ? <Alert variant='danger'>Credenciales Invalidas</Alert>:null}
+          {error ? <Alert variant='danger'>Credenciales Inválidas</Alert>:null}
           <Form onSubmit={formik.handleSubmit}>
           <Form.Group >
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Correo Électronico</Form.Label>
               <Form.Control 
                           id="email"
                           name="email"  
@@ -72,13 +73,13 @@ function FormikLogin() {
                           value={formik.values.email}
                           />
               <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
+              Nunca compartiremos tu email con nadie.
               </Form.Text>
               {formik.errors.email ? <Alert variant='info'>{formik.errors.email}</Alert> : null}
           </Form.Group>
 
           <Form.Group  className="py-2">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Contraseña</Form.Label>
               <Form.Control
                   id="password"
                   name="password"   
@@ -90,7 +91,7 @@ function FormikLogin() {
           </Form.Group>
           {formik.errors.password ? <Alert variant='info'>{formik.errors.password}</Alert> : null}
           <Button  variant="primary" type="submit">
-              Submit
+              Ok
           </Button>
           </Form>
          
